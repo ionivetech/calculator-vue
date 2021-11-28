@@ -1,0 +1,163 @@
+// Import Google Font
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+// Import partials folder
+@import "./partials/variables";
+
+body {
+    background-color: $background-color;
+}
+
+#app {
+    font-family: 'Nunito', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.card-calculator {
+    display: flex;
+    flex-direction: column;
+    min-width: 285px;
+    min-height: 584px;
+    max-height: 584px;
+    padding: 35px 20px;
+    background-color: $color-white;
+    border-radius: $card-radius;
+    box-shadow: $card-shadow;
+}
+
+.btn-history {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    color: $color-gray-light;
+    font-size: 14px;
+    margin-bottom: 20px;
+    cursor: pointer;
+
+    svg {
+        width: 18px;
+        height: 18px;
+        fill: $color-gray-light;
+        margin-right: 5px;
+    }
+}
+
+.div-calculator {
+    display: grid;
+    grid-template-columns: repeat(4, 60px);
+    grid-template-rows: repeat(7, minmax(60px, auto));
+    grid-gap: 15px;
+
+    .display{
+        grid-column: 1 / 5;
+        color: $color-gray;
+        font-size: 20px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    
+    .answer {
+        grid-column: 1 / 5;
+        color: $color-black;
+        font-size: 40px;
+        font-weight: 700;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid $color-line;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 700;
+        font-size: 18px;
+        border-radius: 500px;
+        cursor: pointer;
+    }
+    
+    .btn-number {
+        background-color: $color-button;
+        color: $color-text-button;
+    }
+    
+    .btn-operator {
+        background-color: $color-operator;
+        color: $color-text-operator;
+    }
+    
+    .btn-clear {
+        grid-column: 1 / 3;
+    }
+}
+
+.div-history {
+    overflow-y: auto;
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+        cursor: pointer;
+
+        .wrap-header {
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            color: $color-black;
+
+            svg {
+                width: 24px;
+                height: 24px;
+                fill: $color-black;
+                margin-right: 5px;
+            }
+        }
+        .delete-history {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ebebeb;
+            border-radius: 5px;
+
+            svg {
+                width: 16px;
+                height: 16px;
+                fill: $color-gray-light;
+            }
+        }
+    }
+    .history-list {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        overflow-y: auto;
+
+        p{
+            font-size: 16px;
+            color: $color-gray-light;
+        }
+    }
+    .empty-history {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        p{
+            font-size: 14px;
+            color: $color-gray-light;
+            margin-bottom: 0;
+        }
+    }
+}
